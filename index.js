@@ -1,7 +1,7 @@
 const express = require("express");
 const shell = require("shelljs");
 const app = express();
-const port = 3000;
+const port = 8080;
 
 app.get("/:id", async (req, res) => {
   const id = req.params.id;
@@ -11,7 +11,7 @@ app.get("/:id", async (req, res) => {
   await shell.exec(
     `youtube-dl -x --audio-format mp3 https://www.youtube.com/watch?v=${id}`
   );
-  const fileNameMp3 = fileName.slice(0, -5).concat(".mp3");
+  const fileNameMp3 = fileName.slice(0, -5).concat("mp3");
   const filePath = `./${fileNameMp3}`;
   res.download(filePath);
 });
