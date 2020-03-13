@@ -1,7 +1,7 @@
 const express = require("express");
 const shell = require("shelljs");
 const app = express();
-const port = 8080;
+const port = process.env.PORT || 8080;
 
 app.get("/:id", async (req, res) => {
   const id = req.params.id;
