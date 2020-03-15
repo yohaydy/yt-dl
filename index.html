@@ -2,19 +2,84 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link href="https://fonts.googleapis.com/css?family=Zilla+Slab&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: 'Zilla Slab', serif;
+      }
+
+      html {
+        background: #eee;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 100px auto;
+      }
+
+      input {
+        outline: none;
+        border: none;
+        color: #506d88;
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        font-size: 32px;
+        text-align: center;
+      }
+
+      input::placeholder {
+        color: #eee;
+      }
+
+      .btn {
+        margin-top: 50px;
+        background: #79abdc;
+        color: white;
+        border-radius: 4px;
+        font-size: 22px;
+        width: 300px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        cursor: pointer;
+        letter-spacing: 3px;
+        user-select: none;
+      }
+
+      .btn:hover {
+        background: #5194d2;
+      }
+
+      .btn:active {
+        background: #1f4c77;
+      }
+
+    </style>
   </head>
   <body>
-    <input id="text" type="text" />
-    <button onclick="onClick()">download</button>
+    <div class="container">
+      <input
+        id="text"
+        type="text"
+        placeholder="https://www.youtube.com/watch?v=ESXgJ9-H-2U"
+      />
+      <div class="btn" onclick="onClick()">download</div>
+    </div>
   </body>
   <script>
     const onClick = () => {
       const text = document.getElementById("text").value;
       const hash = text.split("=")[1];
-      window.location.href = window.location.href + hash;
+      if(hash){
+        window.location.href = window.location.href + hash;
+      }
     };
   </script>
 </html>
