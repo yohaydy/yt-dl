@@ -1,11 +1,11 @@
-URL: https://guarded-shore-81468.herokuapp.com/
+## URL: https://guarded-shore-81468.herokuapp.com/
 
-##Run locally:
+## Run locally:
 1. docker build . -t dl
 2. docker run -p 8080:8080 dl
 3. go to http://localhost:8080/
 
-##Deploy
+## Deploy
 1. Add heroku git remote if does not exist
     `heroku git:remote -a guarded-shore-81468`
 2. Commit changes to master
